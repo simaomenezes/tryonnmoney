@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_categoria")
@@ -21,7 +22,8 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cat_seq")
 	private Long codigo;
 	
-	@NotNull
+	@NotNull //utilizando validator do hibernate validator
+	@Size(min = 3, max = 20)
 	private String nome;
 
 	public Long getCodigo() {
