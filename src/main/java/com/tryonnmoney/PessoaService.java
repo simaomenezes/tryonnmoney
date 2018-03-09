@@ -10,20 +10,29 @@ import com.tryonnmoney.repository.PessoaRepository;
 
 @Service
 public class PessoaService {
-	
+
 	@Autowired
 	private PessoaRepository pessoaRepository;
-	
+
 	public Pessoa atualizar(Long codigo, Pessoa p) {
 		
-		Pessoa pSalva = pessoaRepository.findOne(codigo);
-		
-		if (pSalva == null) {
-			throw new EmptyResultDataAccessException(1);
-		}
+		Pessoa pSalva = buscarPessoaPeloCodigo(codigo);
 		BeanUtils.copyProperties(p, pSalva, "codigo");
-		
 		return pessoaRepository.save(pSalva);
 	}
 
+	public void atualizarPropriedadeAtivo(Long codigo, Boolean ativo) {
+		Pessoa pSalva = buscarPessoaPeloCodigo(codigo);
+		pSalva.setAtivo(ativo);
+		pessoaRepository.save(pSalva);
+		
+	}
+	
+	private Pessoa buscarPessoaPeloCodigo(Long codigo) {
+		Pessoa pSalva = pessoaRepository.findOne(codigo);
+		if (pSalva == null) {
+			throw new EmptyResultDataAccessException(1);
+		}
+		return pSalva;
+	}
 }
