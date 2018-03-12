@@ -18,9 +18,8 @@ public class Pessoa implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pessoa_seq")
 	@SequenceGenerator(name = "pessoa_seq", sequenceName = "pessoa_seq", allocationSize = 1)
-	@Column(name = "codigo")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pessoa_seq")
 	private Long codigo;
 
 	@Column(name = "nome")

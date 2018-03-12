@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -52,22 +54,19 @@ public class TryonnmoneyExceptionHandler extends ResponseEntityExceptionHandler 
 	}
 	
 	
-	private List<Erro> criarListaDeErros(BindingResult bindingResult){
+	/*
+	 * Validando incosistencia
+	 * de dados passados
+	 * */
+	@ExceptionHandler({DataIntegrityViolationException.class})
+	public ResponseEntity<Object> handleDataIntegrityViolationException(DataIntegrityViolationException ex, WebRequest webRequest){
 		
-		List<Erro> erros = new ArrayList<>();
+		String messagemUsuario = messageSource.getMessage("recurso.operacao-nao-permitida", null, LocaleContextHolder.getLocale());
+		String mensagemDesenvolvedor = ex.toString(); //org.apache.commons.lang3.exception.ExceptionUtils  //ex.toString();
+		List<Erro> erros = Arrays.asList(new Erro(messagemUsuario, mensagemDesenvolvedor));
 		
-		for (FieldError fieldError : bindingResult.getFieldErrors()) {
-			
-			String mensagemUsuairo = messageSource.getMessage(fieldError, LocaleContextHolder.getLocale());
-			String mensagemDesenvolvedor = fieldError.toString();
-			erros.add(new Erro(mensagemUsuairo, mensagemDesenvolvedor));			
-		}
-		
-
-		return erros;
+		return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.BAD_REQUEST, webRequest);
 	}
-	
-	
 	
 	/*
 	 * Tratando execption e customizando
@@ -84,7 +83,23 @@ public class TryonnmoneyExceptionHandler extends ResponseEntityExceptionHandler 
 		
 		return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.NOT_FOUND, webRequest);
 	}
+	
+	
+	private List<Erro> criarListaDeErros(BindingResult bindingResult){
+		
+		List<Erro> erros = new ArrayList<>();
+		
+		for (FieldError fieldError : bindingResult.getFieldErrors()) {
+			
+			String mensagemUsuairo = messageSource.getMessage(fieldError, LocaleContextHolder.getLocale());
+			String mensagemDesenvolvedor = fieldError.toString();
+			erros.add(new Erro(mensagemUsuairo, mensagemDesenvolvedor));			
+		}
+		
 
+		return erros;
+	}
+	
 	public static class Erro {
 		
 		private String mensagemDesenvolvedor;

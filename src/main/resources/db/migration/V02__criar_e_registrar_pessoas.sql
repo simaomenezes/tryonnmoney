@@ -1,5 +1,5 @@
 CREATE TABLE tb_pessoa (
-	codigo integer NOT NULL,
+	codigo BIGSERIAL CONSTRAINT pk_pe PRIMARY KEY,
  	nome varchar(50) NOT NULL,
  	ativo BOOLEAN NOT NULL,
     logradouro varchar(100),
@@ -18,13 +18,13 @@ CREATE SEQUENCE public.pessoa_seq
     MAXVALUE 9223372036854775807
     CACHE 1;
 
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (1,'João Lucas', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (2,'JJ PP', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (3,'Lucas', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (4,'Gabriel', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (5,'João Felipe', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (6,'Fernanda', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (7,'Fabricia', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (8,'Diego', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (9,'Ana Paula', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
-INSERT INTO tb_pessoa(codigo, nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values (10,'João VII', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('João Lucas', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('JJ PP', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('Lucas', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('Gabriel', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('João Felipe', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('Fernanda', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('Fabricia', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('Diego', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('Ana Paula', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');
+INSERT INTO tb_pessoa(nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado) values ('João VII', true, 'Anadia', '458A', 'Algum lugar', 'centro', '3658-85', 'Pacajus', 'ce');

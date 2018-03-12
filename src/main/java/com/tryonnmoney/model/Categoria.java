@@ -13,16 +13,16 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_categoria")
-@SequenceGenerator(name = "cat_seq", sequenceName = "categoria_seq", initialValue = 1, allocationSize = 1)
 public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@SequenceGenerator(name = "cat_seq", sequenceName = "cat_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cat_seq")
 	private Long codigo;
-	
-	@NotNull //utilizando validator do hibernate validator
+
+	@NotNull // utilizando validator do hibernate validator
 	@Size(min = 3, max = 20)
 	private String nome;
 

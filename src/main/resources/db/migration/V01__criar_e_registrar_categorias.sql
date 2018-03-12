@@ -1,10 +1,18 @@
 CREATE TABLE tb_categoria (
-	codigo integer NOT NULL,
- 	nome varchar(50) NOT NULL
+ codigo BIGSERIAL CONSTRAINT pk_cat PRIMARY KEY,
+ nome varchar(30) NOT NULL
 );
 
-INSERT INTO tb_categoria(codigo, nome) values (1, 'Lazer');
-INSERT INTO tb_categoria(codigo, nome) values (2, 'Alimentação');
-INSERT INTO tb_categoria(codigo, nome) values (3, 'Supermercado');
-INSERT INTO tb_categoria(codigo, nome) values (4, 'Farmácia');
-INSERT INTO tb_categoria(codigo, nome) values (5, 'Outros');
+
+CREATE SEQUENCE public.cat_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+    
+INSERT INTO tb_categoria(nome) values ('Lazer');
+INSERT INTO tb_categoria(nome) values ('Alimentação');
+INSERT INTO tb_categoria(nome) values ('Supermercado');
+INSERT INTO tb_categoria(nome) values ('Farmácia');
+INSERT INTO tb_categoria(nome) values ('Outros');
