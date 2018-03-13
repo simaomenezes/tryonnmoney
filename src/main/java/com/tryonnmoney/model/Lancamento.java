@@ -54,12 +54,12 @@ public class Lancamento implements Serializable {
 	@NotNull
 	@ManyToOne //um lancamento tem uma categoria e uma categoria pode esta em varios lancamentos
 	@JoinColumn(name = "codigo_categoria")
-	private Categoria codigoCategoria;
+	private Categoria categoria;
 
 	@NotNull
 	@ManyToOne //um lancamento tem uma pessoa e uma pessoa pode ter mais de um lancamento
 	@JoinColumn(name = "codigo_pessoa")
-	private Pessoa codigoPessoa;
+	private Pessoa pessoa;
 
 
 
@@ -119,21 +119,23 @@ public class Lancamento implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public Categoria getCodigoCategoria() {
-		return codigoCategoria;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setCodigoCategoria(Categoria codigoCategoria) {
-		this.codigoCategoria = codigoCategoria;
+	public void setCategoria(Categoria codigoCategoria) {
+		this.categoria = codigoCategoria;
 	}
 
-	public Pessoa getCodigoPessoa() {
-		return codigoPessoa;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
-	public void setCodigoPessoa(Pessoa codigoPessoa) {
-		this.codigoPessoa = codigoPessoa;
+	public void setPessoa(Pessoa codigoPessoa) {
+		this.pessoa = codigoPessoa;
 	}
+	
+	
 
 	@Override
 	public int hashCode() {

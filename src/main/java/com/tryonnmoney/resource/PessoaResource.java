@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tryonnmoney.PessoaService;
 import com.tryonnmoney.event.RecursoCriadoEvent;
 import com.tryonnmoney.model.Pessoa;
 import com.tryonnmoney.repository.PessoaRepository;
+import com.tryonnmoney.service.PessoaService;
 
 @RestController
 @RequestMapping("/pessoas")

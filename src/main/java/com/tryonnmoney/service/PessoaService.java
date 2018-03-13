@@ -1,4 +1,4 @@
-package com.tryonnmoney;
+package com.tryonnmoney.service;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class PessoaService {
 		
 	}
 	
-	private Pessoa buscarPessoaPeloCodigo(Long codigo) {
+	public Pessoa buscarPessoaPeloCodigo(Long codigo) {
 		Pessoa pSalva = pessoaRepository.findOne(codigo);
 		if (pSalva == null) {
 			throw new EmptyResultDataAccessException(1);

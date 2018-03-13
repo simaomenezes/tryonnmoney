@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_pessoa")
@@ -61,6 +64,13 @@ public class Pessoa implements Serializable {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+	
+	@JsonIgnore // para que o jackson nao faca a serialização
+	@Transient // para que o hibernate nao leia como atributo
+	public boolean isInativo() {		
+		return !this.ativo;
+		
 	}
 
 }
