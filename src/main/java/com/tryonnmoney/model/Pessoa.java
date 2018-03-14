@@ -1,4 +1,4 @@
-package com.tryonnmoney.model;
+package com.tryonnmoney.api.model;
 
 import java.io.Serializable;
 
@@ -69,7 +69,7 @@ public class Pessoa implements Serializable {
 	@JsonIgnore // para que o jackson nao faca a serialização
 	@Transient // para que o hibernate nao leia como atributo
 	public boolean isInativo() {		
-		return !this.ativo;
+		return this.ativo;
 		
 	}
 

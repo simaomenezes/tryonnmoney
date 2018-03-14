@@ -1,4 +1,4 @@
-package com.tryonnmoney.exeptionhandler;
+package com.tryonnmoney.api.exeptionhandler;
 
 import java.util.ArrayList;
 import java.util.Arrays;

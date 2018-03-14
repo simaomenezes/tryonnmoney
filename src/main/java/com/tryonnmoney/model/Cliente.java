@@ -1,4 +1,4 @@
-package com.tryonnmoney.model;
+package com.tryonnmoney.api.model;
 
 import java.io.Serializable;
 

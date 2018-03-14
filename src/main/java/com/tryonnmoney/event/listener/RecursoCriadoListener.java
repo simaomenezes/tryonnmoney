@@ -1,4 +1,4 @@
-package com.tryonnmoney.event.listener;
+package com.tryonnmoney.api.event.listener;
 
 import java.net.URI;
 
@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.tryonnmoney.event.RecursoCriadoEvent;
+import com.tryonnmoney.api.event.RecursoCriadoEvent;
 
 /*
  * Fica ouvindo nosso evento

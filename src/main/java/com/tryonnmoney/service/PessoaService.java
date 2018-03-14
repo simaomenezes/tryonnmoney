@@ -1,12 +1,12 @@
-package com.tryonnmoney.service;
+package com.tryonnmoney.api.service;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.tryonnmoney.model.Pessoa;
-import com.tryonnmoney.repository.PessoaRepository;
+import com.tryonnmoney.api.model.Pessoa;
+import com.tryonnmoney.api.repository.PessoaRepository;
 
 @Service
 public class PessoaService {

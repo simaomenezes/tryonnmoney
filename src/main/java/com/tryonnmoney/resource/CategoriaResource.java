@@ -1,4 +1,4 @@
-package com.tryonnmoney.resource;
+package com.tryonnmoney.api.resource;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tryonnmoney.event.RecursoCriadoEvent;
-import com.tryonnmoney.model.Categoria;
-import com.tryonnmoney.repository.CategoriaRepository;
+import com.tryonnmoney.api.event.RecursoCriadoEvent;
+import com.tryonnmoney.api.model.Categoria;
+import com.tryonnmoney.api.repository.CategoriaRepository;
 
 @RestController
 @RequestMapping("/categorias")

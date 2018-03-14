@@ -1,4 +1,4 @@
-package com.tryonnmoney.service.exception;
+package com.tryonnmoney.api.service.exception;
 
 public class PessoaInexistenteOuInativaException extends RuntimeException {
 

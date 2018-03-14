@@ -1,4 +1,4 @@
-package com.tryonnmoney.event;
+package com.tryonnmoney.api.event;
 
 import javax.servlet.http.HttpServletResponse;
 

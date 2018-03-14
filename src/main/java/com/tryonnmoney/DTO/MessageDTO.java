@@ -1,4 +1,4 @@
-package com.tryonnmoney.DTO;
+package com.tryonnmoney.api.DTO;
 
 import java.io.Serializable;
 

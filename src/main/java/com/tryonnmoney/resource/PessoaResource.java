@@ -1,14 +1,12 @@
-package com.tryonnmoney.resource;
+package com.tryonnmoney.api.resource;
 
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,10 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tryonnmoney.event.RecursoCriadoEvent;
-import com.tryonnmoney.model.Pessoa;
-import com.tryonnmoney.repository.PessoaRepository;
-import com.tryonnmoney.service.PessoaService;
+import com.tryonnmoney.api.event.RecursoCriadoEvent;
+import com.tryonnmoney.api.model.Pessoa;
+import com.tryonnmoney.api.repository.PessoaRepository;
+import com.tryonnmoney.api.service.PessoaService;
 
 @RestController
 @RequestMapping("/pessoas")
